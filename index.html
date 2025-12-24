@@ -14,27 +14,25 @@
             overflow-x: hidden;
         }
         
-        /* ARKA PLAN FOTOĞRAFI AYARLARI */
+        /* ARKA PLAN FOTOĞRAFI (RENKLİ) */
         #bg-image {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* En arkada durması için */
+            z-index: -1;
             
-            /* BURAYA FOTOĞRAF EKLENECEK (Aşağıdaki URL kısmına) */
-            background-image: url('https://i.imgur.com/qCFt9Hs.jpeg'); 
+            /* BURAYA ARKA PLAN RESMİNİ KOY */
+            background-image: url('https://images.unsplash.com/photo-1594383686866-9e631d8c1c49?q=80&w=2069&auto=format&fit=crop'); 
             
             background-size: cover;
             background-position: center;
             
-            /* Temaya uygun filtreler */
-            opacity: 0.35; /* Yazıların okunması için resmi %35 görünür yaptık */
-            filter:  contrast(120%); /* Resmi otomatik Siyah-Beyaz yapar */
+            /* Filtreleri kaldırdım, resim canlı görünecek */
+            opacity: 0.4; 
         }
 
-        /* Özel Font Stilleri */
         .title-font {
             font-style: italic;
             text-transform: uppercase;
@@ -72,6 +70,14 @@
             background-color: #ffffff;
             color: #000000;
         }
+        
+        /* Galeri Resim Efekti */
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -90,13 +96,8 @@
     </nav>
 
     <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20">
-        
-        <h1 class="text-7xl md:text-9xl font-black mb-2 title-font leading-none drop-shadow-xl">
-            $BUKKAKE
-        </h1>
-        <h2 class="text-2xl md:text-4xl font-bold italic text-gray-400 mb-12 tracking-tight">
-            THE STICKIEST TOKEN ON SOLANA
-        </h2>
+        <h1 class="text-7xl md:text-9xl font-black mb-2 title-font leading-none drop-shadow-xl">$BUKKAKE</h1>
+        <h2 class="text-2xl md:text-4xl font-bold italic text-gray-400 mb-12 tracking-tight">THE STICKIEST TOKEN ON SOLANA</h2>
 
         <div class="glass-panel p-8 w-full max-w-2xl mb-12 rounded-none border border-white">
             <p class="text-xs font-bold mb-4 uppercase tracking-[0.3em] text-gray-400">Contract Address</p>
@@ -107,20 +108,69 @@
         </div>
 
         <div class="flex flex-col md:flex-row gap-6">
-            <a href="PUMP_FUN_LINK_HERE" target="_blank" class="white-btn px-12 py-5 text-xl tracking-tighter">
-                PUMP.FUN
-            </a>
-            <a href="TELEGRAM_LINK_HERE" target="_blank" class="outline-btn px-12 py-5 text-xl tracking-tighter hover:bg-white hover:text-black">
-                JOIN COMMUNITY
-            </a>
+            <a href="PUMP_FUN_LINK_HERE" target="_blank" class="white-btn px-12 py-5 text-xl tracking-tighter">PUMP.FUN</a>
+            <a href="TELEGRAM_LINK_HERE" target="_blank" class="outline-btn px-12 py-5 text-xl tracking-tighter hover:bg-white hover:text-black">JOIN COMMUNITY</a>
         </div>
     </section>
 
-    <section class="py-24 px-4 max-w-7xl mx-auto border-t border-white/20 bg-black">
+    <section class="py-24 px-4 max-w-7xl mx-auto border-t border-white/20 bg-black/80 backdrop-blur-sm">
         <h2 class="text-6xl font-black italic mb-16 text-center title-font uppercase">The Gallery</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
-            <div class="aspect-square bg-gray-900 border border-gray-800 overflow-hidden group relative">
-                <img src="https://via.placeholder.com/600x600/111/fff?text=BUKKAKE+MEME+1" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
-                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="font
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            <div class="gallery-item aspect-square bg-gray-900 border border-gray-800 overflow-hidden group relative">
+                <img src="https://via.placeholder.com/600x600/111/fff?text=FOTO+1" class="w-full h-full object-cover">
+            </div>
+
+            <div class="gallery-item aspect-square bg-gray-900 border border-gray-800 overflow-hidden group relative">
+                <img src="https://via.placeholder.com/600x600/111/fff?text=FOTO+2" class="w-full h-full object-cover">
+            </div>
+
+            <div class="gallery-item aspect-square bg-gray-900 border border-gray-800 overflow-hidden group relative">
+                <img src="https://via.placeholder.com/600x600/111/fff?text=FOTO+3" class="w-full h-full object-cover">
+            </div>
+
+            <div class="gallery-item aspect-square bg-gray-900 border border-gray-800 overflow-hidden group relative">
+                <img src="https://via.placeholder.com/600x600/111/fff?text=FOTO+4" class="w-full h-full object-cover">
+            </div>
+
+            <div class="gallery-item aspect-square bg-gray-900 border border-gray-800 overflow-hidden group relative">
+                <img src="https://via.placeholder.com/600x600/111/fff?text=FOTO+5" class="w-full h-full object-cover">
+            </div>
+
+            <div class="gallery-item aspect-square bg-gray-900 border border-gray-800 overflow-hidden group relative">
+                <img src="https://via.placeholder.com/600x600/111/fff?text=FOTO+6" class="w-full h-full object-cover">
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-white/20 bg-black">
+        <h3 class="text-5xl font-black italic mb-6 title-font">$BUKKAKE</h3>
+        <p class="text-gray-500 text-xs uppercase tracking-widest mb-8">It's everywhere.</p>
+        <div class="flex justify-center gap-8 font-bold italic text-sm">
+            <a href="X_TWITTER_LINK_HERE" class="hover:text-gray-400 hover:underline">X / TWITTER</a>
+            <a href="TELEGRAM_LINK_HERE" class="hover:text-gray-400 hover:underline">TELEGRAM</a>
+            <a href="PUMP_FUN_LINK_HERE" class="hover:text-gray-400 hover:underline">PUMP.FUN</a>
+        </div>
+    </footer>
+
+    <script>
+        function copyCA() {
+            const caText = document.getElementById('ca').innerText;
+            const btn = document.getElementById('copyBtn');
+            navigator.clipboard.writeText(caText);
+            btn.innerText = "COPIED";
+            btn.style.backgroundColor = "#000";
+            btn.style.color = "#fff";
+            btn.style.border = "2px solid #fff";
+            setTimeout(() => {
+                btn.innerText = "COPY";
+                btn.style.backgroundColor = "#fff";
+                btn.style.color = "#000";
+                btn.style.border = "none";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
